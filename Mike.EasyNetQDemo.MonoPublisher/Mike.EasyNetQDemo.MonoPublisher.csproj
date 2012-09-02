@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEE6DBF9-CF0C-49BF-9E44-34E6DFE87D5D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Mike.EasyNetQDemo.MonoPublisher</RootNamespace>
+    <AssemblyName>Mike.EasyNetQDemo.MonoPublisher</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="EasyNetQ">
+      <HintPath>..\packages\EasyNetQ.0.6.3.15\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net20\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.2.8.6\lib\net20\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="NullLogger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="WordLoader.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Mike.EasyNetQDemo.Messages\Mike.EasyNetQDemo.Messages.csproj">
+      <Project>{7192E8FA-57BB-4187-BD09-B15A0E1BC1B9}</Project>
+      <Name>Mike.EasyNetQDemo.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Words.txt" />
+  </ItemGroup>
+</Project>

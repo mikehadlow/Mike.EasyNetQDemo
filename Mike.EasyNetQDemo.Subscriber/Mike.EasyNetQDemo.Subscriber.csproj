@@ -10,7 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Mike.EasyNetQDemo.Subscriber</RootNamespace>
     <AssemblyName>Mike.EasyNetQDemo.Subscriber</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CEE6DBF9-CF0C-49BF-9E44-34E6DFE87D5D}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -30,14 +30,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="EasyNetQ">
-      <HintPath>..\packages\EasyNetQ.0.6.3.15\lib\net40\EasyNetQ.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net20\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="RabbitMQ.Client">
-      <HintPath>..\packages\RabbitMQ.Client.2.8.6\lib\net20\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\packages\RabbitMQ.Client.3.5.3\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\packages\EasyNetQ.0.50.1.392\lib\net40\EasyNetQ.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -55,5 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Words.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

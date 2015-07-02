@@ -10,7 +10,7 @@ namespace Mike.EasyNetQDemo
     {
         static void Main(string[] args)
         {
-            using (var bus = RabbitHutch.CreateBus("host=localhost", new NullLogger()))
+            using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
                 Task.Factory.StartNew(() => Publish(bus));
 
@@ -21,16 +21,11 @@ namespace Mike.EasyNetQDemo
 
         public static void Publish(IBus bus)
         {
-            using(var channel = bus.OpenPublishChannel())
+            foreach (var word in WordLoader.LoadWords())
             {
-                foreach (var word in WordLoader.LoadWords())
-                {
-                    var topic = word.Substring(0, 1);
-
-                    Thread.Sleep(10);
-                    channel.Publish(topic, new WordMessage{ Word = word });
-                    Console.WriteLine("Published '{0}'", word);
-                }
+                Thread.Sleep(10);
+                bus.Publish(new WordMessage{ Word = word });
+                Console.WriteLine("Published '{0}'", word);
             }
         }
     }

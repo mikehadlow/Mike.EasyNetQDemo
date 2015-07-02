@@ -8,11 +8,9 @@ namespace Mike.EasyNetQDemo.Subscriber
     {
         static void Main(string[] args)
         {
-            var topic = args.Length > 0 ? args[0] : "#";
-
-            using (var bus = RabbitHutch.CreateBus("host=localhost", new NullLogger()))
+			using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.Subscribe<WordMessage>("word_subscriber", topic, message => Console.WriteLine(message.Word));
+                bus.Subscribe<WordMessage>("word_subscriber", message => Console.WriteLine(message.Word));
 
                 Console.WriteLine("Subscription Started. Hit any key quit");
                 Console.ReadKey();

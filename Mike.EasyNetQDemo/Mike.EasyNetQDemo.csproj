@@ -39,15 +39,14 @@
     <Reference Include="EasyNetQ">
       <HintPath>..\packages\EasyNetQ.0.50.1.392\lib\net40\EasyNetQ.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\packages\RabbitMQ.Client.3.5.3\lib\net40\RabbitMQ.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NullLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordLoader.cs" />
